@@ -26,4 +26,5 @@ scope.
 and `dslsandbox` would be visible.
 
 ## TODOs
-- add an option for more plugins, such as ES2015
+- add more realistic example
+- add an option to concat plugins, such as ES2015
