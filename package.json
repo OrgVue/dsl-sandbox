@@ -1,0 +1,32 @@
+{
+  "author": "Concentra Analytics",
+  "bugs": {
+    "url": "https://github.com/OrgVue/dsl-sandbox/issues"
+  },
+  "dependencies": {
+    "babel-core": "^6.22.1"
+  },
+  "description": "A sandboxed eval function for building DSLs",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  },
+  "homepage": "https://github.com/OrgVue/dsl-sandbox#readme",
+  "keywords": [
+    "javascript",
+    "eval",
+    "sandbox",
+    "dsl",
+    "jailed"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "dsl-sandbox",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrgVue/dsl-sandbox.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "version": "0.1.0"
+}
