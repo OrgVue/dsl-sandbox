@@ -1,6 +1,6 @@
 # dsl-sandbox
 
-This module provides a transform a script into a safer version. The transform will:
+This module provides a transform for scripts into a safer versions. The transform will:
 - enforce strict mode
 - hide global objects such as `XMLHttpRequest`
 - instrument loops with a check to avoid the script from never returning or crashing a browser
