@@ -34,4 +34,12 @@ describe("transform", function() {
       }))
     }, /Script timeout/)
   })
+
+  it("should transform with extra plugin", function() {
+    var code
+    
+    code = transform("var element = <div>Hello world</div>", { presets: ["react"] })
+
+    if (!code.match("var element = React.createElement")) assert.fail(code, "")
+  })
 })

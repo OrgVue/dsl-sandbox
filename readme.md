@@ -5,7 +5,7 @@ This module provides a transform for scripts into a safer versions. The transfor
 - hide global objects such as `XMLHttpRequest`
 - instrument loops with a check to avoid the script from never returning or crashing a browser
 
-## usage
+## Usage
 
 ```js
 "use strict"
@@ -25,6 +25,14 @@ scope.
 - the actual `eval` call is best isolated in a file to ensure minimum leak of parent scope. In the example, `result`
 and `dslsandbox` would be visible.
 
+## Adding presets or plugins
+Extra code transforms can be added as babel presets or plugins:
+```js
+dslsandbox.transform("var element = <div>Hello world</div>", {
+  presets: ["react"],
+  plugins: []
+})
+```
+
 ## TODOs
 - add more realistic example
-- add an option to concat plugins, such as ES2015

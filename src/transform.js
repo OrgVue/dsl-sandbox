@@ -31,7 +31,7 @@ const plugin = babel => ({
 // transform :: String -> Options -> String
 // Transforms a script to be safer.
 const transform = (script, options) => {
-  var s, timeout
+  var plugins, presets, s, timeout
 
   timeout = options && options.timeout > 0 ? options.timeout : 15000 // 15 seconds default
   s = `"use strict"
@@ -47,8 +47,12 @@ const transform = (script, options) => {
   const __limit = new Date().getTime() + ${timeout};
   `
 
+  presets = options && options.presets && options.presets instanceof Array ? options.presets : []
+  plugins = [plugin]
+  if (options && options.plugins && options.plugins instanceof Array) plugins = plugins.concat(options.plugins)
+
   s = s + script
-  s = babel.transform(s, { plugins: [plugin] }).code
+  s = babel.transform(s, { plugins: plugins, presets: presets }).code
 
   return s
 }

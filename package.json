@@ -4,7 +4,8 @@
     "url": "https://github.com/OrgVue/dsl-sandbox/issues"
   },
   "dependencies": {
-    "babel-core": "^6.22.1"
+    "babel-core": "^6.22.1",
+    "babel-preset-react": "^6.23.0"
   },
   "description": "A sandboxed eval function for building DSLs",
   "devDependencies": {
