@@ -4,12 +4,14 @@
     "url": "https://github.com/OrgVue/dsl-sandbox/issues"
   },
   "dependencies": {
-    "babel-core": "^6.22.1",
-    "babel-preset-react": "^6.23.0"
+    "@babel/standalone": "^7.1.0"
   },
   "description": "A sandboxed eval function for building DSLs",
   "devDependencies": {
-    "mocha": "^3.2.0"
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "mocha": "^5.2.0"
   },
   "homepage": "https://github.com/OrgVue/dsl-sandbox#readme",
   "keywords": [
@@ -27,7 +29,7 @@
     "url": "git+https://github.com/OrgVue/dsl-sandbox.git"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --require @babel/register"
   },
   "version": "0.1.0"
 }

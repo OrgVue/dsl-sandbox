@@ -1,15 +1,20 @@
 "use strict"
 
-const assert = require("assert")
-const transform = require("../src/transform.js")
+import assert from "assert"
+import transform from "../src/transform.js"
 
 // jshint -W061
 
 describe("transform", function() {
   it("should transform to working script", function() {
-    assert.strictEqual(5, eval(transform("2 + 3", {
-      timeout: 2000
-    })))
+    assert.strictEqual(
+      5,
+      eval(
+        transform("2 + 3", {
+          timeout: 2000,
+        }),
+      ),
+    )
   })
 
   it("should shadow XMLHttpRequest", function() {
@@ -18,7 +23,9 @@ describe("transform", function() {
 
   it("should timeout long running script", function() {
     assert.throws(function() {
-      eval(transform(`
+      eval(
+        transform(
+          `
       var i, j, s
 
       s = 0
@@ -29,17 +36,20 @@ describe("transform", function() {
       }
 
       s
-      `, {
-        timeout: 300
-      }))
+      `,
+          {
+            timeout: 300,
+          },
+        ),
+      )
     }, /Script timeout/)
   })
 
   it("should transform with extra plugin", function() {
-    var code
-    
-    code = transform("var element = <div>Hello world</div>", { presets: ["react"] })
+    const code = transform("const x: number = 0;", {
+      plugins: ["transform-typescript"],
+    })
 
-    if (!code.match("var element = React.createElement")) assert.fail(code, "")
+    if (!code.match("const x = 0;")) assert.fail(code, "")
   })
 })

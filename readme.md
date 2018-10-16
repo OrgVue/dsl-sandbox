@@ -10,9 +10,9 @@ This module provides a transform for scripts into a safer versions. The transfor
 ```js
 "use strict"
 
-const dslsandbox = require("dsl-sandbox")
+import dslsandbox from "dsl-sandbox"
 
-var result = (function() {
+const result = (function() {
   return eval(dslsandbox.transform("2 + 3"))
 }).call({})
 
