@@ -1,4 +1,4 @@
 "use strict"
 
 // Exports.
-export { transform } from "./src/transform.js"
+export { default as transform } from "./src/transform.js"
