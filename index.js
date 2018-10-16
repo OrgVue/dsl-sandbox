@@ -1,6 +1,4 @@
 "use strict"
 
 // Exports.
-module.exports = {
-  transform: require("./src/transform.js") 
-}
+export default from "./src/transform.js"
